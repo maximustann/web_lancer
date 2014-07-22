@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +11,8 @@
 
     <title>Web Lancer</title>
     <!-- weblancer.css-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <link href="./css/weblancer.css" rel="stylesheet">
 
 
@@ -17,354 +20,407 @@
     <link href="./css/offcanvas.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="./css/ie-emulation-modes-warning.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./css/ie10-viewport-bug-workaround.js"></script>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<!-- Optional theme -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<script src="css/jquery.js"></script>
     <script src="css/bootstrap.js"></script>
     <script src="css/offcanvas.js"></script>
+    
+    <script type="text/javascript" src="controller.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
-    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
+<body>
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Web Lancer</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Web Lancer</a>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="http://mycloudproject001.appspot.com/">About Us</a></li>
-            <!--li><a href="#contact">Contact</a></li-->
-          </ul>
-        </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-    </div><!-- /.navbar -->
+            <ul class="nav navbar-nav">
+                <li class="active" id="home" onClick="obj.home();"><a href="#home">Home</a></li>
+                <li><a href="" id="#team" onClick="obj.team();">Team</a></li>
+                <!--li><a href="#contact">Contact</a></li-->
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
 
-    <div class="container">
+<div class="container">
 
-      <div class="row row-offcanvas row-offcanvas-right">
-        <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
+<div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-xs-12 col-sm-9">
+        <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-
-
-
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="pics/desktop.jpg" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-    <div class="item">
-      <img src="pics/web_app.jpg" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-   <div class="item">
-      <img src="pics/responsive_design.jpg" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-  </div>
-<a  class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" valign="middle">
-    <span class="glyphicon glyphicon-chevron-left" ></span>
-    
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" ></span>
-  </a>
-</div>
-
-          <div class="row">
-          <div><h2>What can we do?</h2>
-          </div> 
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h3>Accounting Software</h3>
-              <p>We can make accounting software according to what you needs!</p>
-              <p><button class="btn btn-default" data-toggle="modal" data-target="#content_desktopapp" >View details »</button></p>
-
-
-            </div><!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h3>Web Application</h3>
-			  <p>We build web application range from simple web widgets to dynamic web page</p>
-              <p><button class="btn btn-default" data-toggle="modal" data-target="#content_webapp" >View details »</button></p>
-            </div><!--/span-->
-            
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h3>Static Website</h3>
-			  <p>Planned, created, launched, and managed corporate web sites for personal business</p>
-              <p><button class="btn btn-default" data-toggle="modal" data-target="#content_staticweb" >View details »</button></p>
-            </div><!--/span-->
-					<div>&nbsp</div>
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h3>Unix/Linux Program</h3>
-			  <p>Unix/Linux program written in C program or bash script for various purposes including service configuration.</p>
-              <p><button class="btn btn-default" data-toggle="modal" data-target="#content_linux" >View details »</button></p>
-            </div><!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h3>Design Logo</h3>
-			  <p>Design Logo for small business</p>
-              <p><button class="btn btn-default" data-toggle="modal" data-target="#content_logo" >View details »</button></p>
-            </div><!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h3>Data Visualization</h3>
-			  <p>Analysizing data from a given data set and perform the key features into diagram</p>
-              <p><button class="btn btn-default" data-toggle="modal" data-target="#content_visualization" >View details »</button></p>
-            </div><!--/span-->
-          </div><!--/row-->
-        </div><!--/span-->
-
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          <div class="list-group">
-          </div>
-        </div><!--/span-->
-      </div><!--/row-->
-
-      <hr>
-
-      <footer>
-        <p>© Yan & Boxiong 2014</p>
-      </footer>
-
-<!-- modal -->
-<div class="modal fade" id="content_desktopapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="background-color:#FEFEF6;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Accounting Software</h4>
-      </div>
-      <div class="modal-body">
-       <h3>Accounting software:</h3>
-<p>Accounting software is an application software that records and processes accounting transactions within functional modules such as accounts payable, accounts receivable, payroll, and trial balance. It functions as an accounting information system. We can make, deliver or construct a accounting software with a combination of a third-party application software packages with local modifications. It varies greatly in its complexity and cost.
-</p>
-<h3><img src="pics/rocket-solid-icon.png" width=10% hight=10%/> Speed</h3>
-<p>Computerized packages for invoicing make the accounting process run faster and more efficiently--a major advantage. Instead of using the old-fashioned manual paper and pen, you can print professional-looking invoices fast. You even can send out invoices via e-mail. The faster invoices get out, the faster you are likely to get paid. Many invoicing or billing software packages interface with the rest of your accounting software, making the process of preparing invoices and recording them seamless, fast and automatic.
-</p>
-<h3><img src="pics/error.png" width=10% hight=10%/> Minimize Errors</h3>
-<p>When you use a computerized system, you make fewer mistakes in calculating totals or in typing, decreasing confusion.Invoice software usually allows you to include a tax percentage when appropriate, with the system performing all calculations. This is a useful advantage, especially when you have detailed invoices where hours or specific items are billed at different rates. Once a system is set up properly, you pick and choose items to be invoiced and the rest is done for you.
-</p>
-<h3><img src="pics/report.png" width=10% hight=10%/>Reporting</h3>
-<p>A major advantage of using a computerized invoice system is the capability to run reports to determine which customers have paid and which haven't. An aging report shows you who owes you, how much and for how long. This is done easily and puts you in control of your finances. You can contact customers who are late-payers, minimizing losses. A well-run business relies on prompt and reliable information, and a computerized invoicing system fits this requirement well.
-</p>
-<h3><img src="pics/organisation.png" width=10% hight=10%/>Organization</h3>
-<p>It is easy to lose or forget about invoices, especially when they are prepared manually.They can get lost in the mail, or they may be misfiled in a manual system. With an accounting software package, the data is there--all organized in one place to be reviewed, reprinted and resent in case of problems. You usually can look in the system for invoices based on names, amounts or invoice numbers. It is a fast and easy process because the software organizes data as it is entered.
-</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal1-->
-
-<!-- modal -->
-<div class="modal fade" id="content_webapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-  <div class="modal-dialog" >
-    <div class="modal-content" style="background-color:#F0EFEA;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Web Application</h4>
-      </div>
-      <div class="modal-body" style="background-image:url('pics/earth.png');background-repeat:no-repeat;background-position:center bottom; ">
-        <p>A web application or web app is any application software that runs in a web browser and is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a common web browser to render the application.
         </p>
-<p>Web-based software is software you use over the internet with a web browser. You don’t have to install any CDs, download any software, or worry about upgrades. If you use an online bank or web-based email program like Gmail, Hotmail, or Yahoo Mail then you’ve already used web-based software before</p>
-<p>When you use web-based software you don’t have to worry about anything technical — you can just do your work. We handle all the security and uptime and backups and upgrades and “IT guy” stuff. You can stay focused on what you’re good at and we’ll handle the rest.</p>
-<p>There’s nothing to install, ever. With our software there’s nothing to download or install.Just log in with the web-browser you already have (Internet Explorer, Safari, or Firefox). It’s just like your online bank or web-based email program.
-</p>
-<p>You can work from home, work, or on the road. When you use web-based software your office is everywhere.At work, at home, a hotel, at a client’s office, even on your mobile phone. You data is accessible anywhere with internet access.
-</p>
-<br/><br/><br/><br/><br/><br/><br/><br/>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+
+
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="pics/desktop.jpg" alt="...">
+
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="pics/web_app.jpg" alt="...">
+
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="pics/responsive_design.jpg" alt="...">
+
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"
+               valign="middle">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+        <div class="row" id="content">
+
+        </div>
+        <!--/row-->
+    
+    
+    
+    
+    
+    
     </div>
-  </div>
+    <!--/span-->
+
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+        <div class="list-group">
+        </div>
+    </div>
+    <!--/span-->
+</div>
+<!--/row-->
+
+<hr>
+
+<footer>
+    <p>© Yan & Boxiong 2014</p>
+</footer>
+
+<!-- modal -->
+<div class="modal fade" id="content_desktopapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color:#FEFEF6;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Accounting Software</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Accounting software:</h3>
+
+                <p>Accounting software is an application software that records and processes accounting transactions
+                    within functional modules such as accounts payable, accounts receivable, payroll, and trial balance.
+                    It functions as an accounting information system. We can make, deliver or construct a accounting
+                    software with a combination of a third-party application software packages with local modifications.
+                    It varies greatly in its complexity and cost.
+                </p>
+
+                <h3><img src="pics/rocket-solid-icon.png" width=10% hight=10%/> Speed</h3>
+
+                <p>Computerized packages for invoicing make the accounting process run faster and more efficiently--a
+                    major advantage. Instead of using the old-fashioned manual paper and pen, you can print
+                    professional-looking invoices fast. You even can send out invoices via e-mail. The faster invoices
+                    get out, the faster you are likely to get paid. Many invoicing or billing software packages
+                    interface with the rest of your accounting software, making the process of preparing invoices and
+                    recording them seamless, fast and automatic.
+                </p>
+
+                <h3><img src="pics/error.png" width=10% hight=10%/> Minimize Errors</h3>
+
+                <p>When you use a computerized system, you make fewer mistakes in calculating totals or in typing,
+                    decreasing confusion.Invoice software usually allows you to include a tax percentage when
+                    appropriate, with the system performing all calculations. This is a useful advantage, especially
+                    when you have detailed invoices where hours or specific items are billed at different rates. Once a
+                    system is set up properly, you pick and choose items to be invoiced and the rest is done for you.
+                </p>
+
+                <h3><img src="pics/report.png" width=10% hight=10%/>Reporting</h3>
+
+                <p>A major advantage of using a computerized invoice system is the capability to run reports to
+                    determine which customers have paid and which haven't. An aging report shows you who owes you, how
+                    much and for how long. This is done easily and puts you in control of your finances. You can contact
+                    customers who are late-payers, minimizing losses. A well-run business relies on prompt and reliable
+                    information, and a computerized invoicing system fits this requirement well.
+                </p>
+
+                <h3><img src="pics/organisation.png" width=10% hight=10%/>Organization</h3>
+
+                <p>It is easy to lose or forget about invoices, especially when they are prepared manually.They can get
+                    lost in the mail, or they may be misfiled in a manual system. With an accounting software package,
+                    the data is there--all organized in one place to be reviewed, reprinted and resent in case of
+                    problems. You usually can look in the system for invoices based on names, amounts or invoice
+                    numbers. It is a fast and easy process because the software organizes data as it is entered.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Modal1-->
 
 <!-- modal -->
-<div class="modal fade" id="content_staticweb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="background-color:#FEFEF6;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Static Web</h4>
-      </div>
-      <div class="modal-body">
-<p><b>More and more people are looking for services and products on-line than every before.</b> Peoples' habits are changing. 
-People move to a new area and very often rely solely on the Internet to learn about the new area, research and find out who to go to for what.
-</p>
-<p>Many people research and find their homes and jobs over the Internet. Most people are coming to expect that any professionally run business will have a web site. 
-With a well-designed site your small business becomes a real player both on and off the net.
-</p>
-Add your web address to your stationary, business cards and other advertisements and you'll have visitors knowing exactly where to go for answers to their questions and where to send their friends to for great service.
-The more people know about you and your company the greater the chances you have for attracting new customers. More is generally a good thing when running a business, unless you're talking about expenses!
-</p>
+<div class="modal fade" id="content_webapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color:#F0EFEA;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Web Application</h4>
+            </div>
+            <div class="modal-body"
+                 style="background-image:url('pics/earth.png');background-repeat:no-repeat;background-position:center bottom; ">
+                <p>A web application or web app is any application software that runs in a web browser and is created in
+                    a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and
+                    relies on a common web browser to render the application.
+                </p>
 
-<p><b>More Advertising for Less Money.</b>
-With a web site you can have pages of full-color advertisements that run 24 hours a day, 7 days a week! You get to present yourself and your services to your customers using many descriptive pages, images, interactive elements, etc. This tends to build peoples' trust, 
-which in turn, makes them more likely to purchase your products and services.
-</p>
-<img src="pics/staticweb.jpg" />
-<b>Create a New Customer Base for your business.</b>
-Did you ever notice that many people who use the Internet do so in place of the old school, traditional methods (newspapers, yellow pages, etc)?
-</p>
-With a web site you will be able to reach a whole new segment of potential clients that may have missed your current ad campaigns. 
-A good, informative web site will attract many people who may not have heard of you otherwise.
-</p>
- Gather Contact Information
-</p>A traditional printed newsletter can be an expensive and time consuming promotional action. With printing, postage and time spent, the costs can add up fast. 
-With a web site you can have people who would like to receive your newsletter send you their email address. You can then email your newsletter to all of the people in your database, automatically! You don't need to pay for printing or postage for these newsletters. 
-Continual contact with prospects is a proven tactic which directly leads to more inquiries and sales!
-</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+                <p>Web-based software is software you use over the internet with a web browser. You don’t have to
+                    install any CDs, download any software, or worry about upgrades. If you use an online bank or
+                    web-based email program like Gmail, Hotmail, or Yahoo Mail then you’ve already used web-based
+                    software before</p>
+
+                <p>When you use web-based software you don’t have to worry about anything technical — you can just do
+                    your work. We handle all the security and uptime and backups and upgrades and “IT guy” stuff. You
+                    can stay focused on what you’re good at and we’ll handle the rest.</p>
+
+                <p>There’s nothing to install, ever. With our software there’s nothing to download or install.Just log
+                    in with the web-browser you already have (Internet Explorer, Safari, or Firefox). It’s just like
+                    your online bank or web-based email program.
+                </p>
+
+                <p>You can work from home, work, or on the road. When you use web-based software your office is
+                    everywhere.At work, at home, a hotel, at a client’s office, even on your mobile phone. You data is
+                    accessible anywhere with internet access.
+                </p>
+                <br/><br/><br/><br/><br/><br/><br/><br/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+<!-- Modal1-->
+
+<!-- modal -->
+<div class="modal fade" id="content_staticweb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color:#FEFEF6;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Static Web</h4>
+            </div>
+            <div class="modal-body">
+                <p><b>More and more people are looking for services and products on-line than every before.</b> Peoples'
+                    habits are changing.
+                    People move to a new area and very often rely solely on the Internet to learn about the new area,
+                    research and find out who to go to for what.
+                </p>
+
+                <p>Many people research and find their homes and jobs over the Internet. Most people are coming to
+                    expect that any professionally run business will have a web site.
+                    With a well-designed site your small business becomes a real player both on and off the net.
+                </p>
+                Add your web address to your stationary, business cards and other advertisements and you'll have
+                visitors knowing exactly where to go for answers to their questions and where to send their friends to
+                for great service.
+                The more people know about you and your company the greater the chances you have for attracting new
+                customers. More is generally a good thing when running a business, unless you're talking about expenses!
+                </p>
+
+                <p><b>More Advertising for Less Money.</b>
+                    With a web site you can have pages of full-color advertisements that run 24 hours a day, 7 days a
+                    week! You get to present yourself and your services to your customers using many descriptive pages,
+                    images, interactive elements, etc. This tends to build peoples' trust,
+                    which in turn, makes them more likely to purchase your products and services.
+                </p>
+                <img src="pics/staticweb.jpg"/>
+                <b>Create a New Customer Base for your business.</b>
+                Did you ever notice that many people who use the Internet do so in place of the old school, traditional
+                methods (newspapers, yellow pages, etc)?
+                </p>
+                With a web site you will be able to reach a whole new segment of potential clients that may have missed
+                your current ad campaigns.
+                A good, informative web site will attract many people who may not have heard of you otherwise.
+                </p>
+                Gather Contact Information
+                </p>A traditional printed newsletter can be an expensive and time consuming promotional action. With
+                printing, postage and time spent, the costs can add up fast.
+                With a web site you can have people who would like to receive your newsletter send you their email
+                address. You can then email your newsletter to all of the people in your database, automatically! You
+                don't need to pay for printing or postage for these newsletters.
+                Continual contact with prospects is a proven tactic which directly leads to more inquiries and sales!
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Modal1-->
 
 
-
-
-
-
 <!-- modal -->
-<div class="modal fade" id="content_linux" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="background-color:#FEFEF6;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Unit/Linux Program</h4>
-      </div>
-      <div class="modal-body">
-<h3>Linux Daemon Program</h3>
-<p>
-A daemon process is a process which runs in background and has no controlling terminal. Because it would run without disturbing other programs, it can be used as a monitor to other programs or keeping logs of the system. It can also be used as other purposes, such as restart a key program automatically or monitoring the network flow.
-</p>
-<h3><img src="pics/terminal.png"  width=10% height=10% /> Bash Script</h3>
-<p>Bash Script could be a very helpful tool for manage the linux system. It helps you get rid of those tedious repeated works by simply run the script, and all the works will be automatically taking case of. </p>
-<h3>Services Configuration</h3>
-<p>Configuring services are always complicated and tedious. You'll never know where you messed up until you try thousands of times.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+<div class="modal fade" id="content_linux" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color:#FEFEF6;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Unit/Linux Program</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Linux Daemon Program</h3>
+
+                <p>
+                    A daemon process is a process which runs in background and has no controlling terminal. Because it
+                    would run without disturbing other programs, it can be used as a monitor to other programs or
+                    keeping logs of the system. It can also be used as other purposes, such as restart a key program
+                    automatically or monitoring the network flow.
+                </p>
+
+                <h3><img src="pics/terminal.png" width=10% height=10%/> Bash Script</h3>
+
+                <p>Bash Script could be a very helpful tool for manage the linux system. It helps you get rid of those
+                    tedious repeated works by simply run the script, and all the works will be automatically taking case
+                    of. </p>
+
+                <h3>Services Configuration</h3>
+
+                <p>Configuring services are always complicated and tedious. You'll never know where you messed up until
+                    you try thousands of times.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <!-- Modal1-->
 
 <!-- modal -->
 <div class="modal fade" id="content_logo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="background-color:#FEFEF6;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Business Logo</h4>
-      </div>
-      <div class="modal-body">
-<h3>Business Logo</h3>
-<p>Can't find a perfect logo for your business? We know exactly how to make a logo that make your business stand out.</p>
-<img src="pics/logo.jpg"/>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color:#FEFEF6;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Business Logo</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Business Logo</h3>
+
+                <p>Can't find a perfect logo for your business? We know exactly how to make a logo that make your
+                    business stand out.</p>
+                <img src="pics/logo.jpg"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <!-- Modal1-->
 
 <!-- modal -->
-<div class="modal fade" id="content_visualization" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="background-color:#FEFEF6;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Data Visualization</h4>
-      </div>
-      <div class="modal-body">
-<h3>Displaying Data</h3>
-<p>Data visualization is big topic, including displaying data, data mining, data analysis.
-What we can do, is helping you display your data intuitively. We not only could use rather traditional chart, such as pie chart, line chart, but also use multi-dimension graph display your data effectively. Normally, we would implement the diagram with javascript which can be showed in most browsers. It also could contain animations which make the data interactive.</p>
-<img src="pics/graph.jpg"/>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+<div class="modal fade" id="content_visualization" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color:#FEFEF6;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Visualization</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Displaying Data</h3>
+
+                <p>Data visualization is big topic, including displaying data, data mining, data analysis.
+                    What we can do, is helping you display your data intuitively. We not only could use rather
+                    traditional chart, such as pie chart, line chart, but also use multi-dimension graph display your
+                    data effectively. Normally, we would implement the diagram with javascript which can be showed in
+                    most browsers. It also could contain animations which make the data interactive.</p>
+                <img src="pics/graph.jpg"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <!-- Modal1-->
 
 
+</div>
+<!--/.container-->
 
 
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div><!--/.container-->
-
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-  
-
-</body></html>
+<script type="text/javascript">
+	var obj = new controller();
+	obj.setup();
+</script>
+</body>
+</html>
