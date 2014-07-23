@@ -11,6 +11,8 @@
 
     <title>Web Lancer</title>
     <!-- weblancer.css-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <link href="./css/weblancer.css" rel="stylesheet">
 
 
@@ -33,9 +35,10 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-    <script src="css/jquery.js"></script>
     <script src="css/bootstrap.js"></script>
     <script src="css/offcanvas.js"></script>
+    
+    <script type="text/javascript" src="controller.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -58,8 +61,8 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="http://mycloudproject001.appspot.com/">About Us</a></li>
+                <li class="active" id="home" onClick="obj.home();"><a href="#home">Home</a></li>
+                <li><a href="" id="#team" onClick="obj.team();">Team</a></li>
                 <!--li><a href="#contact">Contact</a></li-->
             </ul>
         </div>
@@ -117,85 +120,16 @@
             </a>
         </div>
 
-        <div class="row">
-            <div><h2>What can we do?</h2>
-            </div>
-            <div class="col-6 col-sm-6 col-lg-4">
-                <h3>Accounting Software</h3>
+        <div class="row" id="content">
 
-                <p>We can make accounting software according to what you needs!</p>
-
-                <p>
-                    <button class="btn btn-default" data-toggle="modal" data-target="#content_desktopapp">View details
-                        »
-                    </button>
-                </p>
-
-
-            </div>
-            <!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-                <h3>Web Application</h3>
-
-                <p>We build web application range from simple web widgets to dynamic web page</p>
-
-                <p>
-                    <button class="btn btn-default" data-toggle="modal" data-target="#content_webapp">View details »
-                    </button>
-                </p>
-            </div>
-            <!--/span-->
-
-            <div class="col-6 col-sm-6 col-lg-4">
-                <h3>Static Website</h3>
-
-                <p>Planned, created, launched, and managed corporate web sites for personal business</p>
-
-                <p>
-                    <button class="btn btn-default" data-toggle="modal" data-target="#content_staticweb">View details
-                        »
-                    </button>
-                </p>
-            </div>
-            <!--/span-->
-            <div>&nbsp</div>
-            <div class="col-6 col-sm-6 col-lg-4">
-                <h3>Unix/Linux Program</h3>
-
-                <p>Unix/Linux program written in C program or bash script for various purposes including service
-                    configuration.</p>
-
-                <p>
-                    <button class="btn btn-default" data-toggle="modal" data-target="#content_linux">View details »
-                    </button>
-                </p>
-            </div>
-            <!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-                <h3>Design Logo</h3>
-
-                <p>Design Logo for small business</p>
-
-                <p>
-                    <button class="btn btn-default" data-toggle="modal" data-target="#content_logo">View details »
-                    </button>
-                </p>
-            </div>
-            <!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-                <h3>Data Visualization</h3>
-
-                <p>Analysizing data from a given data set and perform the key features into diagram</p>
-
-                <p>
-                    <button class="btn btn-default" data-toggle="modal" data-target="#content_visualization">View
-                        details »
-                    </button>
-                </p>
-            </div>
-            <!--/span-->
         </div>
         <!--/row-->
+    
+    
+    
+    
+    
+    
     </div>
     <!--/span-->
 
@@ -484,6 +418,9 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
-
+<script type="text/javascript">
+	var obj = new controller();
+	obj.setup();
+</script>
 </body>
 </html>
