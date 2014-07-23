@@ -9,14 +9,14 @@ this.home = function()
 {
 $("#home").addClass("active");
 $("#team").removeClass("active");
-$("#content").load("team.html");
+$("#content").load("home.html");
 }
 
 this.team = function()
 {
 $("#team").addClass("active");
 $("#home").removeClass("active");
-$("#content").load("home.html");
+$("#content").load("team.html");
 }
 
 } 
